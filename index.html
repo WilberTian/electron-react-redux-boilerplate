@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>electron</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script>
+      {
+        const port = process.env.PORT || 8080;
+
+        const vendor = document.createElement('script');
+        vendor.src = (process.env.NODE_ENV === 'production') ? 'dist/vendor.bundle.js' : `http://localhost:${port}/dist/vendor.bundle.js`;
+        document.write(vendor.outerHTML);
+
+        const bundle = document.createElement('script');
+        bundle.src = (process.env.NODE_ENV === 'production') ? 'dist/bundle.js' : `http://localhost:${port}/dist/bundle.js`;
+        document.write(bundle.outerHTML);
+      }
+  </script>
+</html>
