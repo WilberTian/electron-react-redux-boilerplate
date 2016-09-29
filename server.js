@@ -18,7 +18,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 app.use(require('webpack-hot-middleware')(compiler));
 
-app.listen(port, 'localhost', (err) => {
+app.listen(port, '::', (err) => {
   if (err) {
     console.log(err);
     return;
